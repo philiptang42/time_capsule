@@ -15,6 +15,8 @@ while true
     end
     break
   else
+    puts "Enter the number of #{addition} you would like to include:"
+    amount = gets.chomp
     time_capsule << addition
     puts "#{addition} has been added!"
   end
