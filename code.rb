@@ -9,15 +9,22 @@ while true
   puts "Type FINISHED to stop adding things."
   addition = gets.chomp
   if addition == "FINISHED"
-    puts "Here are the contents of the Time Capsule:"
-    time_capsule.each do |item|
-      puts "* #{item}"
-    end
     break
   else
-    puts "Enter the number of #{addition} you would like to include:"
+    puts "How many of #{addition} would you like to add?"
     amount = gets.chomp
+    addition += " (#{amount})"
     time_capsule << addition
     puts "#{addition} has been added!"
+    puts "---------"
+  end
+end
+
+if time_capsule == []
+  puts "#{name}, your Time Capsule is empty."
+else
+  puts "#{name}, here is the contents of your Time Capsule:"
+  time_capsule.each do |item|
+    puts "* #{item}"
   end
 end
